@@ -1,0 +1,34 @@
+{{#partial "content"}}
+
+    <h1>Welcome to the CD Organizer</h1>
+
+    <p>Add a new CD:</p>
+
+    <form action="/cds/new" method="POST">
+        <label for="artist">Artist:</label>
+        <input id="artist" name="artist" type="text">
+
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text">
+
+        <label for="year">Year:</label>
+        <input id="year" name="year" type="number">
+
+        <button type="submit" class="btn btn-default">Add a CD</button>
+    </form>
+
+    <p>Here is a list of all of your CDs!</p>
+
+    {{#if allCDs}}
+    {{#each allCDs }}
+    <p>CD Info:</p>
+    <p>{{title}}</p>
+    <p>{{artist}}</p>
+    <p>{{year}}</p>
+    {{/each}}
+    {{else}}
+    <p>No CDs have been entered!</p>
+    {{/if}}
+{{/partial}}git pu
+
+{{> layout.hbs}}
